@@ -6,9 +6,6 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtCore/QSize>
 
-constexpr auto KILL_CHANCE_TEXT = "Kill Chance:";
-constexpr auto AVERAGE_WOUNDS_TEXT = "Average Wounds:";
-
 ranged_output_widget::ranged_output_widget(QWidget *parent)
     : QWidget(parent)
 {

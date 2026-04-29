@@ -8,6 +8,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QSpacerItem>
 #include <QPushButton>
+#include <format>
 
 ranged_widget::ranged_widget(QWidget *parent)
     : QWidget(parent)
@@ -32,8 +33,35 @@ void ranged_widget::ConnectButtons() const
 
 void ranged_widget::CalculateAndDisplaySimulationResults() const
 {
+	ranged_config cf{};
+
+	cf.attacker.attacks = attackerWidget->getAttacks();
+	cf.attacker.ws = attackerWidget->getWeaponScore();
+	cf.attacker.normal_dmg = attackerWidget->getNormalDamage();
+	cf.attacker.crit_dmg = attackerWidget->getCriticalDamage();
+	cf.attacker.faction_rerolls = attackerWidget->getFactionRerolls();
+	cf.attacker.rerolling_agressively = attackerWidget->shouldRerollIntoCritsIfNotKilling();
+	cf.attacker.accurate = attackerWidget->getAccurate();
+	cf.attacker.balanced = attackerWidget->isBalanced();
+	cf.attacker.ceaseless = attackerWidget->isCeaseless();
+	cf.attacker.devestating = attackerWidget->getDevastating();
+	cf.attacker.is_lethal = attackerWidget->isLethality();
+	cf.attacker.lethality = attackerWidget->getLethalityValue();
+	cf.attacker.piercing = attackerWidget->getPiercing();
+	cf.attacker.punishing = attackerWidget->isPunishing();
+	cf.attacker.relentless = attackerWidget->isRelentless();
+	cf.attacker.rending = attackerWidget->isRending();
+	cf.attacker.severe = attackerWidget->isSevere();
+
+	cf.defender.wounds = defenderWidget->getWounds();
+	cf.defender.save = defenderWidget->getSave();
+	cf.defender.cover = defenderWidget->hasCover();
+	cf.defender.obscured = defenderWidget->isObscured();
+	cf.defender.faction_reroll = defenderWidget->getFactionRerolls();
+	cf.defender.rerolling_aggressively = defenderWidget->isRerollAggressively();
+
     auto result = ranged_calculations::test();
-	outputWidget->setKillPercent(QString::fromStdString(result));
+	outputWidget->setKillPercent(QString::fromStdString(std::format("{} {:.2f}", ranged_output_widget::KILL_CHANCE_TEXT, 100 * ranged_calculations::calculateKillChance(cf))));
 }
 
 void ranged_widget::reset()

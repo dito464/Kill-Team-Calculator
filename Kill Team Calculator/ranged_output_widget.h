@@ -13,6 +13,10 @@ class ranged_output_widget : public QWidget
     Q_OBJECT
 
 public:
+
+    constexpr static auto KILL_CHANCE_TEXT = "Kill Chance:";
+    constexpr static auto AVERAGE_WOUNDS_TEXT = "Average Wounds:";
+
     ranged_output_widget(QWidget *parent = nullptr);
 
     QPushButton* getCalculateButton() const;

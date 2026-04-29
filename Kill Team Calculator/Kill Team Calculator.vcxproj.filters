@@ -46,25 +46,33 @@
     <ClCompile Include="defender_widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="output_widget.cpp">
+    <ClCompile Include="ranged_widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ranged_widget.cpp">
+    <ClCompile Include="ranged_output_widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ranged_calculations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="attacker_widget.h">
+    <ClInclude Include="ranged_calculations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="defender_widget.h">
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="attacker_widget.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="output_widget.h">
+    </QtMoc>
+    <QtMoc Include="defender_widget.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ranged_widget.h">
+    </QtMoc>
+    <QtMoc Include="ranged_output_widget.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </QtMoc>
+    <QtMoc Include="ranged_widget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>

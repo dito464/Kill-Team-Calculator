@@ -2,7 +2,6 @@
 #include <random>
 
 double ranged_calculations::calculateKillChance(const ranged_config& cf) {
-    return 0;
     constexpr int runs = 100000;
     int kills = 0;
 
