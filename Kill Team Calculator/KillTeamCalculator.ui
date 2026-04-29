@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>703</width>
-    <height>541</height>
+    <width>1085</width>
+    <height>519</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -34,7 +34,7 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="rangedLayout" stretch="0,0,0,0,0">
+     <layout class="QHBoxLayout" name="rangedLayout" stretch="3,0,3,0,1">
       <item>
        <widget class="attacker_widget" name="attackerWidget" native="true">
         <property name="sizePolicy">
@@ -45,7 +45,7 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>250</width>
+          <width>300</width>
           <height>0</height>
          </size>
         </property>
@@ -206,7 +206,7 @@
               <widget class="QSpinBox" name="lethalitySpinBox">
                <property name="minimumSize">
                 <size>
-                 <width>65</width>
+                 <width>80</width>
                  <height>0</height>
                 </size>
                </property>
@@ -317,7 +317,7 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
+          <width>250</width>
           <height>200</height>
          </size>
         </property>
@@ -533,7 +533,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>703</width>
+     <width>1085</width>
      <height>21</height>
     </rect>
    </property>
