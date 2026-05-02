@@ -19,14 +19,14 @@ public:
 
     ranged_output_widget(QWidget *parent = nullptr);
 
-    QPushButton* getCalculateButton() const;
-    QPushButton* getResetButton() const;
-    void setKillPercent(const QString &text);
-    void setAverageWounds(const QString &text);
+    QPushButton* get_calculate_button() const;
+    QPushButton* get_reset_button() const;
+    void set_kill_percent(const QString &text);
+    void set_average_wounds(const QString &text);
 	void reset();
 
 private:
-    void setupUI(Ui_KillTeamCalculatorClass* ui);
+    void setup_ui(Ui_KillTeamCalculatorClass* ui);
     friend class ranged_widget;
 
     QPushButton *calculateButton;

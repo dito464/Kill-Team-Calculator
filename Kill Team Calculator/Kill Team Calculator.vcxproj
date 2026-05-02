@@ -109,12 +109,12 @@
     <QtRcc Include="KillTeamCalculator.qrc" />
     <QtUic Include="KillTeamCalculator.ui" />
     <QtMoc Include="KillTeamCalculator.h" />
-    <QtMoc Include="attacker_widget.h" />
-    <QtMoc Include="defender_widget.h" />
+    <QtMoc Include="ranged_attacker_widget.h" />
+    <QtMoc Include="ranged_defender_widget.h" />
     <QtMoc Include="ranged_output_widget.h" />
     <QtMoc Include="ranged_widget.h" />
-    <ClCompile Include="attacker_widget.cpp" />
-    <ClCompile Include="defender_widget.cpp" />
+    <ClCompile Include="ranged_attacker_widget.cpp" />
+    <ClCompile Include="ranged_defender_widget.cpp" />
     <ClCompile Include="KillTeamCalculator.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

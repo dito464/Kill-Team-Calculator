@@ -11,7 +11,7 @@ ranged_output_widget::ranged_output_widget(QWidget *parent)
 {
 }
 
-void ranged_output_widget::setupUI(Ui_KillTeamCalculatorClass* ui)
+void ranged_output_widget::setup_ui(Ui_KillTeamCalculatorClass* ui)
 {
 	calculateButton = ui->calculateButton;
 	resetButton = ui->resetButton;
@@ -20,28 +20,28 @@ void ranged_output_widget::setupUI(Ui_KillTeamCalculatorClass* ui)
 	outAverageWoundsLabel = ui->outAverageWoundsLabel;
 }
 
-QPushButton* ranged_output_widget::getCalculateButton() const
+QPushButton* ranged_output_widget::get_calculate_button() const
 {
     return calculateButton;
 }
 
-QPushButton* ranged_output_widget::getResetButton() const
+QPushButton* ranged_output_widget::get_reset_button() const
 {
     return resetButton;
 }
 
-void ranged_output_widget::setKillPercent(const QString &text)
+void ranged_output_widget::set_kill_percent(const QString &text)
 {
     outKillPercentLabel->setText(text);
 }
 
-void ranged_output_widget::setAverageWounds(const QString &text)
+void ranged_output_widget::set_average_wounds(const QString &text)
 {
     outAverageWoundsLabel->setText(text);
 }
 
 void ranged_output_widget::reset()
 {
-    setKillPercent(KILL_CHANCE_TEXT);
-    setAverageWounds(AVERAGE_WOUNDS_TEXT);
+    set_kill_percent(KILL_CHANCE_TEXT);
+    set_average_wounds(AVERAGE_WOUNDS_TEXT);
 }

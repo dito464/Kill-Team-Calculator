@@ -1,13 +1,13 @@
 #include "KillTeamCalculator.h"
 
-KillTeamCalculator::KillTeamCalculator(QWidget* parent)
+kill_team_calculator::kill_team_calculator(QWidget* parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
-	ui.rangedWidget->setupUI(&ui);
-    ui.rangedWidget->ConnectButtons();
+	ui.rangedWidget->setup_ui(&ui);
+    ui.rangedWidget->connect_buttons();
 }
 
-KillTeamCalculator::~KillTeamCalculator()
+kill_team_calculator::~kill_team_calculator()
 {
 }

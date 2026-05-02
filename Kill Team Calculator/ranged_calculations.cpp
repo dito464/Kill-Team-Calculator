@@ -1,7 +1,7 @@
 #include "ranged_calculations.h"
 #include <random>
 
-ranged_results ranged_calculations::calculateKillChance(const ranged_config& cf) {
+ranged_results ranged_calculations::calculate_kill_chance(const ranged_config& cf) {
     constexpr int runs = 100000;
     int kills = 0;
 	int total_wounds = 0;
@@ -210,7 +210,7 @@ ranged_results ranged_calculations::calculateKillChance(const ranged_config& cf)
     }
 
     ranged_results results {};
-	results.averageWounds = static_cast<double>(total_wounds) / static_cast<double>(runs);
-	results.killChance = static_cast<double>(kills) / static_cast<double>(runs);
+	results.average_wounds = static_cast<double>(total_wounds) / static_cast<double>(runs);
+	results.kill_chance = static_cast<double>(kills) / static_cast<double>(runs);
 	return results;
 }

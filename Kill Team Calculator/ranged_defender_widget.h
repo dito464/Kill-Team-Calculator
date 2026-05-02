@@ -9,33 +9,33 @@ class QFormLayout;
 class ranged_widget;
 class Ui_KillTeamCalculatorClass;
 
-class defender_widget : public QGroupBox
+class ranged_defender_widget : public QGroupBox
 {
     Q_OBJECT
 
 public:
-    defender_widget(QWidget *parent = nullptr);
+    ranged_defender_widget(QWidget *parent = nullptr);
 
     // Getters
-    int getWounds() const;
-    int getSave() const;
-    bool hasCover() const;
-    bool isObscured() const;
-    int getFactionRerolls() const;
-	bool isRerollAggressively() const;
+    int get_wounds() const;
+    int get_save() const;
+    bool has_cover() const;
+    bool is_obscured() const;
+    int get_faction_rerolls() const;
+	bool is_reroll_aggressively() const;
 
     // Setters
-    void setWounds(int value);
-    void setSave(int value);
-    void setCover(bool value);
-    void setObscured(bool value);
-    void setFactionRerolls(int value);
-	void setRerollAggressively(bool value);
+    void set_wounds(int value);
+    void set_save(int value);
+    void set_cover(bool value);
+    void set_obscured(bool value);
+    void set_faction_rerolls(int value);
+	void set_reroll_aggressively(bool value);
 
     void reset();
 
 private:
-    void setupUI(Ui_KillTeamCalculatorClass* ui);
+    void setup_ui(Ui_KillTeamCalculatorClass* ui);
     friend class ranged_widget;
 
     QFormLayout *defenderForm;

@@ -40,12 +40,12 @@ struct ranged_config
 
 struct ranged_results
 {
-	double killChance;
-	double averageWounds;
+	double kill_chance;
+	double average_wounds;
 };
 
 class ranged_calculations
 {
 public:
-	static ranged_results calculateKillChance(const ranged_config& cf);
+	static ranged_results calculate_kill_chance(const ranged_config& cf);
 };

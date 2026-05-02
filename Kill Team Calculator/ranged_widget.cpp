@@ -1,6 +1,6 @@
 #include "ranged_widget.h"
-#include "attacker_widget.h"
-#include "defender_widget.h"
+#include "ranged_attacker_widget.h"
+#include "ranged_defender_widget.h"
 #include "ranged_output_widget.h"
 #include "ranged_calculations.h"
 #include "ui_KillTeamCalculator.h"
@@ -15,54 +15,54 @@ ranged_widget::ranged_widget(QWidget *parent)
 {
 }
 
-void ranged_widget::setupUI(Ui_KillTeamCalculatorClass* ui)
+void ranged_widget::setup_ui(Ui_KillTeamCalculatorClass* ui)
 {
 	attackerWidget = ui->attackerWidget;
-	attackerWidget->setupUI(ui);
+	attackerWidget->setup_ui(ui);
 	defenderWidget = ui->defenderWidget;
-	defenderWidget->setupUI(ui);
+	defenderWidget->setup_ui(ui);
     outputWidget = ui->outputWidget;
-	outputWidget->setupUI(ui);
+	outputWidget->setup_ui(ui);
 }
 
-void ranged_widget::ConnectButtons() const
+void ranged_widget::connect_buttons() const
 {
-	connect(outputWidget->getCalculateButton(), &QPushButton::clicked, this, &ranged_widget::CalculateAndDisplaySimulationResults);
-	connect(outputWidget->getResetButton(), &QPushButton::clicked, this, &ranged_widget::reset);
+	connect(outputWidget->get_calculate_button(), &QPushButton::clicked, this, &ranged_widget::calculate_and_display_simulation_results);
+	connect(outputWidget->get_reset_button(), &QPushButton::clicked, this, &ranged_widget::reset);
 }
 
-void ranged_widget::CalculateAndDisplaySimulationResults() const
+void ranged_widget::calculate_and_display_simulation_results() const
 {
 	ranged_config cf{};
 
-	cf.attacker.attacks = attackerWidget->getAttacks();
-	cf.attacker.ws = attackerWidget->getWeaponScore();
-	cf.attacker.normal_dmg = attackerWidget->getNormalDamage();
-	cf.attacker.crit_dmg = attackerWidget->getCriticalDamage();
-	cf.attacker.faction_rerolls = attackerWidget->getFactionRerolls();
-	cf.attacker.rerolling_agressively = attackerWidget->shouldRerollIntoCritsIfNotKilling();
-	cf.attacker.accurate = attackerWidget->getAccurate();
-	cf.attacker.balanced = attackerWidget->isBalanced();
-	cf.attacker.ceaseless = attackerWidget->isCeaseless();
-	cf.attacker.devestating = attackerWidget->getDevastating();
-	cf.attacker.is_lethal = attackerWidget->isLethality();
-	cf.attacker.lethality = attackerWidget->getLethalityValue();
-	cf.attacker.piercing = attackerWidget->getPiercing();
-	cf.attacker.punishing = attackerWidget->isPunishing();
-	cf.attacker.relentless = attackerWidget->isRelentless();
-	cf.attacker.rending = attackerWidget->isRending();
-	cf.attacker.severe = attackerWidget->isSevere();
+	cf.attacker.attacks = attackerWidget->get_attacks();
+	cf.attacker.ws = attackerWidget->get_weapon_score();
+	cf.attacker.normal_dmg = attackerWidget->get_normal_damage();
+	cf.attacker.crit_dmg = attackerWidget->get_critical_damage();
+	cf.attacker.faction_rerolls = attackerWidget->get_faction_rerolls();
+	cf.attacker.rerolling_agressively = attackerWidget->should_reroll_into_crits_if_not_killing();
+	cf.attacker.accurate = attackerWidget->get_accurate();
+	cf.attacker.balanced = attackerWidget->is_balanced();
+	cf.attacker.ceaseless = attackerWidget->is_ceaseless();
+	cf.attacker.devestating = attackerWidget->get_devastating();
+	cf.attacker.is_lethal = attackerWidget->is_lethality();
+	cf.attacker.lethality = attackerWidget->get_lethality_value();
+	cf.attacker.piercing = attackerWidget->get_piercing();
+	cf.attacker.punishing = attackerWidget->is_punishing();
+	cf.attacker.relentless = attackerWidget->is_relentless();
+	cf.attacker.rending = attackerWidget->is_rending();
+	cf.attacker.severe = attackerWidget->is_severe();
 
-	cf.defender.wounds = defenderWidget->getWounds();
-	cf.defender.save = defenderWidget->getSave();
-	cf.defender.cover = defenderWidget->hasCover();
-	cf.defender.obscured = defenderWidget->isObscured();
-	cf.defender.faction_reroll = defenderWidget->getFactionRerolls();
-	cf.defender.rerolling_aggressively = defenderWidget->isRerollAggressively();
+	cf.defender.wounds = defenderWidget->get_wounds();
+	cf.defender.save = defenderWidget->get_save();
+	cf.defender.cover = defenderWidget->has_cover();
+	cf.defender.obscured = defenderWidget->is_obscured();
+	cf.defender.faction_reroll = defenderWidget->get_faction_rerolls();
+	cf.defender.rerolling_aggressively = defenderWidget->is_reroll_aggressively();
 
-	auto result = ranged_calculations::calculateKillChance(cf);
-	outputWidget->setKillPercent(QString::fromStdString(std::format("{} {:.2f}", ranged_output_widget::KILL_CHANCE_TEXT, 100 * result.killChance)));
-	outputWidget->setAverageWounds(QString::fromStdString(std::format("{} {:.2f}", ranged_output_widget::AVERAGE_WOUNDS_TEXT, result.averageWounds)));
+	auto result = ranged_calculations::calculate_kill_chance(cf);
+	outputWidget->set_kill_percent(QString::fromStdString(std::format("{} {:.2f}", ranged_output_widget::KILL_CHANCE_TEXT, 100 * result.kill_chance)));
+	outputWidget->set_average_wounds(QString::fromStdString(std::format("{} {:.2f}", ranged_output_widget::AVERAGE_WOUNDS_TEXT, result.average_wounds)));
 }
 
 void ranged_widget::reset()
@@ -72,17 +72,17 @@ void ranged_widget::reset()
 	outputWidget->reset();
 }
 
-attacker_widget* ranged_widget::getAttackerWidget() const
+ranged_attacker_widget* ranged_widget::get_attacker_widget() const
 {
     return attackerWidget;
 }
 
-defender_widget* ranged_widget::getDefenderWidget() const
+ranged_defender_widget* ranged_widget::get_defender_widget() const
 {
     return defenderWidget;
 }
 
-ranged_output_widget* ranged_widget::getOutputWidget() const
+ranged_output_widget* ranged_widget::get_output_widget() const
 {
     return outputWidget;
 }

@@ -46,7 +46,7 @@
         </sizepolicy>
        </property>
        <attribute name="title">
-        <string>Tab 1</string>
+        <string>Ranged</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
@@ -55,7 +55,7 @@
            <item>
             <layout class="QHBoxLayout" name="rangedLayout" stretch="3,0,3,0,1">
              <item>
-              <widget class="attacker_widget" name="attackerWidget" native="true">
+              <widget class="ranged_attacker_widget" name="attackerWidget" native="true">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
                  <horstretch>0</horstretch>
@@ -327,7 +327,7 @@
               </spacer>
              </item>
              <item>
-              <widget class="defender_widget" name="defenderWidget" native="true">
+              <widget class="ranged_defender_widget" name="defenderWidget" native="true">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
                  <horstretch>0</horstretch>
@@ -552,7 +552,7 @@
       </widget>
       <widget class="QWidget" name="meleeTab">
        <attribute name="title">
-        <string>Tab 2</string>
+        <string>Melee</string>
        </attribute>
       </widget>
      </widget>
@@ -605,15 +605,15 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>attacker_widget</class>
+   <class>ranged_attacker_widget</class>
    <extends>QWidget</extends>
-   <header>attacker_widget.h</header>
+   <header>ranged_attacker_widget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>defender_widget</class>
+   <class>ranged_defender_widget</class>
    <extends>QWidget</extends>
-   <header>defender_widget.h</header>
+   <header>ranged_defender_widget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

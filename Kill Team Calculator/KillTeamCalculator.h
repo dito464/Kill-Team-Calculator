@@ -3,13 +3,13 @@
 #include <QtWidgets/QMainWindow>
 #include "ranged_widget.h"
 
-class KillTeamCalculator : public QMainWindow
+class kill_team_calculator : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    KillTeamCalculator(QWidget *parent = nullptr);
-    ~KillTeamCalculator();
+    kill_team_calculator(QWidget *parent = nullptr);
+    ~kill_team_calculator();
 
 private:
     RangedWidget *rangedWidget;
@@ -21,13 +21,13 @@ private:
 #include <QtWidgets/QMainWindow>
 #include "ui_KillTeamCalculator.h"
 
-class KillTeamCalculator : public QMainWindow
+class kill_team_calculator : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    KillTeamCalculator(QWidget* parent = nullptr);
-    ~KillTeamCalculator();
+    kill_team_calculator(QWidget* parent = nullptr);
+    ~kill_team_calculator();
 
 private:
     Ui::KillTeamCalculatorClass ui;

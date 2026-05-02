@@ -9,55 +9,55 @@ class QFormLayout;
 class ranged_widget;
 class Ui_KillTeamCalculatorClass;
 
-class attacker_widget : public QGroupBox
+class ranged_attacker_widget : public QGroupBox
 {
     Q_OBJECT
 
 public:
-    attacker_widget(QWidget *parent = nullptr);
+    ranged_attacker_widget(QWidget *parent = nullptr);
 
     // Getters
-    int getAttacks() const;
-    int getWeaponScore() const;
-    int getNormalDamage() const;
-    int getCriticalDamage() const;
-    int getAccurate() const;
-    bool isBalanced() const;
-    bool isCeaseless() const;
-    int getDevastating() const;
-    bool isLethality() const;
-    int getLethalityValue() const;
-    int getPiercing() const;
-    bool isPunishing() const;
-    bool isRelentless() const;
-    bool isRending() const;
-    bool isSevere() const;
-    int getFactionRerolls() const;
-    bool shouldRerollIntoCritsIfNotKilling() const;
+    int get_attacks() const;
+    int get_weapon_score() const;
+    int get_normal_damage() const;
+    int get_critical_damage() const;
+    int get_accurate() const;
+    bool is_balanced() const;
+    bool is_ceaseless() const;
+    int get_devastating() const;
+    bool is_lethality() const;
+    int get_lethality_value() const;
+    int get_piercing() const;
+    bool is_punishing() const;
+    bool is_relentless() const;
+    bool is_rending() const;
+    bool is_severe() const;
+    int get_faction_rerolls() const;
+    bool should_reroll_into_crits_if_not_killing() const;
 
     // Setters
-    void setAttacks(int value);
-    void setWeaponScore(int value);
-    void setNormalDamage(int value);
-    void setCriticalDamage(int value);
-    void setAccurate(int value);
-    void setBalanced(bool value);
-    void setCeaseless(bool value);
-    void setDevastating(int value);
-    void setLethality(bool value);
-    void setLethalityValue(int value);
-    void setPiercing(int value);
-    void setPunishing(bool value);
-    void setRelentless(bool value);
-    void setRending(bool value);
-    void setSevere(bool value);
-    void setFactionRerolls(int value);
-    void setRerollIntoCritsIfNotKilling(bool value);
+    void set_attacks(int value);
+    void set_weapon_score(int value);
+    void set_normal_damage(int value);
+    void set_critical_damage(int value);
+    void set_accurate(int value);
+    void set_balanced(bool value);
+    void set_ceaseless(bool value);
+    void set_devastating(int value);
+    void set_lethality(bool value);
+    void set_lethality_value(int value);
+    void set_piercing(int value);
+    void set_punishing(bool value);
+    void set_relentless(bool value);
+    void set_rending(bool value);
+    void set_severe(bool value);
+    void set_faction_rerolls(int value);
+    void set_reroll_into_crits_if_not_killing(bool value);
 
     void reset();
 
 private:
-    void setupUI(Ui_KillTeamCalculatorClass* ui);
+    void setup_ui(Ui_KillTeamCalculatorClass* ui);
     friend class ranged_widget;
 
     QFormLayout *attackerForm;
