@@ -38,9 +38,14 @@ struct ranged_config
 	ranged_defender_config defender;
 };
 
+struct ranged_results
+{
+	double killChance;
+	double averageWounds;
+};
+
 class ranged_calculations
 {
 public:
-	static std::string test() { return "test"; }
-	static double calculateKillChance(const ranged_config& cf);
+	static ranged_results calculateKillChance(const ranged_config& cf);
 };

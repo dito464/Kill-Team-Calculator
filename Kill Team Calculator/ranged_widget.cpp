@@ -60,8 +60,9 @@ void ranged_widget::CalculateAndDisplaySimulationResults() const
 	cf.defender.faction_reroll = defenderWidget->getFactionRerolls();
 	cf.defender.rerolling_aggressively = defenderWidget->isRerollAggressively();
 
-    auto result = ranged_calculations::test();
-	outputWidget->setKillPercent(QString::fromStdString(std::format("{} {:.2f}", ranged_output_widget::KILL_CHANCE_TEXT, 100 * ranged_calculations::calculateKillChance(cf))));
+	auto result = ranged_calculations::calculateKillChance(cf);
+	outputWidget->setKillPercent(QString::fromStdString(std::format("{} {:.2f}", ranged_output_widget::KILL_CHANCE_TEXT, 100 * result.killChance)));
+	outputWidget->setAverageWounds(QString::fromStdString(std::format("{} {:.2f}", ranged_output_widget::AVERAGE_WOUNDS_TEXT, result.averageWounds)));
 }
 
 void ranged_widget::reset()

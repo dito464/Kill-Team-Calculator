@@ -1,15 +1,16 @@
 #include "ranged_calculations.h"
 #include <random>
 
-double ranged_calculations::calculateKillChance(const ranged_config& cf) {
+ranged_results ranged_calculations::calculateKillChance(const ranged_config& cf) {
     constexpr int runs = 100000;
     int kills = 0;
+	int total_wounds = 0;
 
     static std::random_device rd;
     static std::seed_seq seq{
        rd(), rd(), rd(), rd(), rd(), rd(), rd(), rd()
     };
-    static std::mt19937_64 gen(seq);
+    static std::mt19937_64 gen(seq);    
 
     std::uniform_int_distribution<> dice_distrib(1, 6);
 
@@ -96,7 +97,7 @@ double ranged_calculations::calculateKillChance(const ranged_config& cf) {
             }
         }
 
-        int attack_damage = 0;
+        uint16_t attack_damage = 0;
         if (attacker.devestating > 0)
         {
             attack_damage += atk_crits * attacker.devestating;
@@ -200,11 +201,16 @@ double ranged_calculations::calculateKillChance(const ranged_config& cf) {
 
         attack_damage += (attacker.normal_dmg * atk_normal) + (attacker.crit_dmg * atk_crits);
 
+		total_wounds += std::min(attack_damage, defender.wounds);
+
         if (attack_damage >= defender.wounds)
         {
             kills++;
         }
     }
-    
-    return static_cast<double>(kills) / static_cast<double>(runs);
+
+    ranged_results results {};
+	results.averageWounds = static_cast<double>(total_wounds) / static_cast<double>(runs);
+	results.killChance = static_cast<double>(kills) / static_cast<double>(runs);
+	return results;
 }
