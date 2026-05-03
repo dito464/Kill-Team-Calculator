@@ -92,6 +92,6 @@ private:
     QCheckBox *severeCheckBox;
     QLabel *factionRerollsAtkLabel;
     QSpinBox *factionRerollsSpinBox;
-    QLabel *rerollIntoCritsIfNotKillingLabel;
-    QCheckBox *rerollIntoCritsIfNotKillingCheckBox;
+    QLabel *atkRerollNormalSuccessesLabel;
+    QCheckBox *atkRerollNormalSuccessesCheckBox;
 };

@@ -49,6 +49,6 @@ private:
     QCheckBox *obscuredCheckBox;
     QLabel *factionDefRerollsLabel;
     QSpinBox *factionDefRerollsSpinBox;
-	QLabel* rerollIntoCritsIfAnyLabel;
-	QCheckBox* rerollIntoCritsIfAnyCheckBox;
+	QLabel* defRerollNormalSuccessesLabel;
+	QCheckBox* defRerollNormalSuccessesCheckBox;
 };

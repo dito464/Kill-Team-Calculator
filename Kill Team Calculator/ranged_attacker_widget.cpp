@@ -31,8 +31,8 @@ void ranged_attacker_widget::setup_ui(Ui_KillTeamCalculatorClass* ui)
 	factionRerollsSpinBox = ui->factionAtkRerollsSpinBox;
 	factionRerollsAtkLabel = ui->factionAtkRerollsLabel;
 
-	rerollIntoCritsIfNotKillingCheckBox = ui->rerollIntoCritsIfNotKillingCheckBox;
-	rerollIntoCritsIfNotKillingLabel = ui->rerollIntoCritsIfNotKillingLabel;
+	atkRerollNormalSuccessesCheckBox = ui->atkRerollNormalSuccessesCheckBox;
+	atkRerollNormalSuccessesLabel = ui->atkRerollNormalSuccessesLabel;
 
 	accurateSpinBox = ui->accurateSpinBox;
 	accurateLabel = ui->accurateLabel;
@@ -82,7 +82,7 @@ bool ranged_attacker_widget::is_relentless() const { return relentlessCheckBox->
 bool ranged_attacker_widget::is_rending() const { return rendingCheckBox->isChecked(); }
 bool ranged_attacker_widget::is_severe() const { return severeCheckBox->isChecked(); }
 int ranged_attacker_widget::get_faction_rerolls() const { return factionRerollsSpinBox->value(); }
-bool ranged_attacker_widget::should_reroll_into_crits_if_not_killing() const { return rerollIntoCritsIfNotKillingCheckBox->isChecked(); }
+bool ranged_attacker_widget::should_reroll_into_crits_if_not_killing() const { return atkRerollNormalSuccessesCheckBox->isChecked(); }
 
 void ranged_attacker_widget::set_attacks(int value) { attacksSpinBox->setValue(value); }
 void ranged_attacker_widget::set_weapon_score(int value) { weaponScoreSpinBox->setValue(value); }
@@ -100,7 +100,7 @@ void ranged_attacker_widget::set_relentless(bool value) { relentlessCheckBox->se
 void ranged_attacker_widget::set_rending(bool value) { rendingCheckBox->setChecked(value); }
 void ranged_attacker_widget::set_severe(bool value) { severeCheckBox->setChecked(value); }
 void ranged_attacker_widget::set_faction_rerolls(int value) { factionRerollsSpinBox->setValue(value); }
-void ranged_attacker_widget::set_reroll_into_crits_if_not_killing(bool value) { rerollIntoCritsIfNotKillingCheckBox->setChecked(value); }
+void ranged_attacker_widget::set_reroll_into_crits_if_not_killing(bool value) { atkRerollNormalSuccessesCheckBox->setChecked(value); }
 
 void ranged_attacker_widget::reset()
 {
